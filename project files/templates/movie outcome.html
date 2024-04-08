@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomMovie</title>
+    <style>
+        @font-face {
+            font-family: Millik;
+            font-weight: 700;
+            src: url(./font/Millik.c3f91cb.ttf) format("truetype");
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: Millik, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url(./static/00.png);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /* 定义白色底框 */
+        .white-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 75%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+            border-radius: 50px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 15%;
+        }
+
+        /* 内容容器 */
+        .content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 55%;
+        }
+
+        /* 图片框样式 */
+        .image-box {
+            width: 40%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 20px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 文字框样式 */
+        .text-box {
+            width: 60%;
+            height: 100%;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .text-box p {
+            margin-bottom: 10px;
+        }
+
+        /* 底部样式 */
+        .bottom-content {
+            width: 100%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 按钮样式 */
+        .select-button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .select-button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="white-box">
+        <!-- 头部 -->
+        <header>
+            <h1>🎬想看什么电影📽️️</h1>
+        </header>
+
+        <!-- 内容 -->
+        <div class="content">
+            <!-- 图片框 -->
+            <div class="image-box">
+                <img src="{{ film_pic_link|safe}}" alt="Film Image">
+            </div>
+            <!-- 文字框 -->
+            <div class="text-box">
+                <p>电影标题: {{film_title|safe}}</p>
+                <p>导演: {{film_director|safe}} </p>
+                <p>国家: {{film_country|safe}} </p>
+                <p>类型: {{film_genere|safe}}</p>
+                <p>评分: {{film_score|safe}}</p>
+                <p>评分人数: {{film_people_watched|safe}}</p>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="bottom-content">
+            <div>
+                <!-- 底部文字 -->
+                <p>底部文字</p>
+            </div>
+        </div>
+        <div>
+            <button class="select-button">返回</button>
+            <button class="select-button">换一个</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

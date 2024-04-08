@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomMovie</title>
+    <style>
+        @font-face {
+            font-family: Millik;
+            font-weight: 700;
+            src: url(./font/Millik.c3f91cb.ttf) format("truetype");
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: Millik, sans-serif; /* 使用自定义字体，如果字体加载失败则回退到系统默认字体 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url(./image/00.png);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /* 定义白色底框 */
+        .white-box {
+            position: absolute; /* 绝对定位 */
+            top: 50%; /* 位于垂直方向的中间 */
+            left: 50%; /* 位于水平方向的中间 */
+            transform: translate(-50%, -50%); /* 居中 */
+            width: 40%; /* 宽度为40% */
+            height: 75%; /* 高度为60% */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); /* 中心向外的渐变背景 */
+            border-radius: 50px; /* 圆角 */
+            padding: 20px; /* 添加内边距 */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* 添加投影 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /* 定义筛选框样式 */
+        .filter-box {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* 定义选择按钮样式 */
+        .select-button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .select-button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="white-box">
+    <header style="text-align: center; display: flex; flex-direction: column; align-items: center; position: absolute; top: 10%;">
+        <h1>🎬想看什么电影📽️️</h1>
+        <h2>请选择你的筛选条件</h2>
+
+        <a href="movie outcome.html"button class="select-button">选择</button></a>
+    </div>
+
+</body>
+
+</html>
