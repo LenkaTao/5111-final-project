@@ -1,6 +1,7 @@
 from flask import Flask, url_for, redirect, render_template, request
 from random_film import random_film, random_book, random_music
-import pandas as pd
+import pandas as pd 
+pd.set_option('display.max_colwidth', 1000)
 
 app = Flask(__name__)
 
