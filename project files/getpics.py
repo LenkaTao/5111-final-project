@@ -27,7 +27,6 @@ def download_images(excel_file_path, images_dir):
         try:
             response = requests.get(image_url)
             response.raise_for_status()  # 确保请求成功
-
             # 保存图片
             with open(file_path, 'wb') as f:
                 f.write(response.content)

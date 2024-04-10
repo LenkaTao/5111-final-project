@@ -70,10 +70,6 @@ if __name__ == '__main__':
     print(f'{a}\n{b}\n{c}\n{i}')
 
     #类型数数
-    film_type = pd.read_excel('lists/top250films.xlsx').loc[:,'类型']
-    type_list = []
-    for i in range(film_type.shape[0]):
-        the_types = film_type.loc[i:].to_string(index=False, header=False).split()
-        for j in range(len(the_types)):
-            type_list.append(the_types[j])
-    print(list(set(type_list)))
+    list_data = pd.read_excel('lists/top250music.xlsx')
+    counts = list_data['流派'].value_counts()
+    print(counts)
