@@ -21,6 +21,7 @@ def download_images(excel_file_path, images_dir):
             print(f"文件已存在，跳过下载: {image_name}")
             continue
 
+
         try:
             response = requests.get(image_url)
             response.raise_for_status()  # 确保请求成功
