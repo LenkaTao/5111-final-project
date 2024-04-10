@@ -3,6 +3,7 @@ import pandas as pd
 def random_film(film_list): #film_list is a dataframe
     a_film = film_list.sample(n=1)
     film_title = a_film.loc[:,'标题'].to_string(index=False, header=False)
+    film_source = film_title + '.jpg'
     film_detail_link = a_film.loc[:,'详情链接'].to_string(index=False, header=False)
     film_pic_link = a_film.loc[:,'图片链接'].to_string(index=False, header=False)
     film_year = a_film.loc[:,'年份'].to_string(index=False, header=False)
@@ -11,7 +12,7 @@ def random_film(film_list): #film_list is a dataframe
     film_director = film_info.split('主演')[0].strip()[4:]
     film_actor = film_info.split('主演:')[1]
     if '\\' in film_actor:
-        film_actor = act0r.split('/')[0]
+        film_actor = film_actor.split('/')[0]
     film_genere = a_film.loc[:,'类型'].to_string(index=False, header=False)
     film_score = a_film.loc[:,'评分'].to_string(index=False, header=False)
     film_people_watched = a_film.loc[:,'评价人数'].to_string(index=False, header=False)
@@ -20,7 +21,7 @@ def random_film(film_list): #film_list is a dataframe
     #tencentvideo_link = 'https://v.qq.com/x/search/?q='+ film_title
     #iqiyi_link = 'https://www.iq.com/search?query=' + film_title + '% &originInput=' + film_title
     #youku_link = 'https://so.youku.com/search_video/q_' + film_title + '?searchfrom=1'
-    return film_title,film_detail_link,film_pic_link,film_year,\
+    return film_title,film_source,film_detail_link,film_pic_link,film_year,\
     film_country,film_info,film_director,film_actor,\
     film_genere,film_score,film_people_watched,film_brief_intro
 
@@ -57,7 +58,7 @@ def random_music(music_list): #music_list is a dataframe
 if __name__ == '__main__':
     #Test
     #random film
-    film_title,film_detail_link,film_pic_link,film_year,film_country,\
+    film_title,film_source, film_detail_link,film_pic_link,film_year,film_country,\
     film_info,film_genere,film_score,film_people_watched,film_brief_intro,film_director,film_actor\
     = random_film(pd.read_excel('lists/top250films.xlsx'))
     print(f'{film_title}\n{film_detail_link}\n{film_director}\n{film_actor}')

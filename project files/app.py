@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route('/RandomMovie') #点击random film
 def randomfilm():
-    film_title,film_detail_link,film_pic_link,film_year,film_country,\
+    film_title,film_source,film_detail_link,film_pic_link,film_year,film_country,\
     film_info,film_director, film_actor, film_genere,film_score,film_people_watched,film_brief_intro = random_film(pd.read_excel('lists/top250films.xlsx'))
     return render_template('movie outcome.html',
-                           film_title = film_title,film_detail_link = film_detail_link,film_pic_link = film_pic_link, film_year = film_year,\
+                           film_title = film_title,film_source = film_source, film_detail_link = film_detail_link,film_pic_link = film_pic_link, film_year = film_year,\
                            film_country = film_country, film_info = film_info, film_director = film_director, film_actor = film_actor, film_genere = film_genere,\
                            film_score = film_score, film_people_watched = film_people_watched, film_brief_intro = film_brief_intro
                             )
@@ -44,4 +44,4 @@ def home():
     return render_template('home.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(debug=True)
