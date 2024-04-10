@@ -35,4 +35,4 @@ def download_images(excel_file_path, images_dir):
 
 # 调用函数
 if __name__ == "__main__":
-    download_images('lists/top250films.xlsx', 'static/films')
+#    download_images('lists/top250films.xlsx', 'static/films')
