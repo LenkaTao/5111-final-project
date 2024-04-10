@@ -39,3 +39,4 @@ if __name__ == "__main__":
     download_images('lists/top250films.xlsx', 'static/films')
     download_images('lists/top250books.xlsx', 'static/books')
     download_images('lists/top250music.xlsx', 'static/music')
+

@@ -25,6 +25,7 @@ def random_film(film_list): #film_list is a dataframe
     film_country,film_info,film_director,film_actor,\
     film_genere,film_score,film_people_watched,film_brief_intro
 
+
 def random_book(book_list): #book_list is a dataframe
     a_book = book_list.sample(n=1)
     book_title = (a_book.loc[:,'标题']).to_string(index=False, header=False)
@@ -73,3 +74,4 @@ if __name__ == '__main__':
     list_data = pd.read_excel('lists/top250music.xlsx')
     counts = list_data['流派'].value_counts()
     print(counts)
+
