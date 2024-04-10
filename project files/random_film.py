@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def random_film(film_list): #film_list is a dataframe
     a_film = film_list.sample(n=1)
     film_title = a_film.loc[:,'标题'].to_string(index=False, header=False)
@@ -12,7 +11,7 @@ def random_film(film_list): #film_list is a dataframe
     film_director = film_info.split('主演')[0].strip()[4:]
     film_actor = film_info.split('主演:')[1]
     if '\\' in film_actor:
-        film_actor = acotr.split('/')[0]
+        film_actor = act0r.split('/')[0]
     film_genere = a_film.loc[:,'类型'].to_string(index=False, header=False)
     film_score = a_film.loc[:,'评分'].to_string(index=False, header=False)
     film_people_watched = a_film.loc[:,'评价人数'].to_string(index=False, header=False)

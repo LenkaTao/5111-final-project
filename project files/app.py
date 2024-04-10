@@ -17,7 +17,7 @@ def randomfilm():
 
 @app.route('/randombook') #点击random book
 def randombook():
-    book_title,book_detail_link,book_pic_link,book_author,book_publisher,
+    book_title,book_detail_link,book_pic_link,book_author,book_publisher,\
     book_time,book_price,book_score,book_people_rated,book_brief_intro = random_book(pd.read_excel('lists/top250books.xlsx'))
     return render_template('home.html',
                            book_title = book_title,book_detail_link = book_detail_link,book_pic_link = book_pic_link,\
@@ -27,7 +27,7 @@ def randombook():
 
 @app.route('/randommusic') #点击random music
 def randommusic():
-    music_title,music_detail_link,music_pic_link,music_singer,music_time,
+    music_title,music_detail_link,music_pic_link,music_singer,music_time,\
     music_genere,music_medium,music_type,music_score, music_people_rated = random_music(pd.read_excel('lists/top250music.xlsx'))
     return render_template('home.html',
                            music_title = music_title,music_detail_link = music_detail_link,music_pic_link = music_pic_link,\
