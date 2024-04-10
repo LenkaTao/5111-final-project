@@ -1,0 +1,17 @@
+# 忽略所有 .DS_Store 文件
+.DS_Store
+
+# 忽略虚拟环境目录
+venv/
+
+# 忽略 Python 编译生成的字节码文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 忽略 Mac OS 的图标文件
+Icon?
+
+# 忽略某个特定的文件，例如：config.py
+# config.py
