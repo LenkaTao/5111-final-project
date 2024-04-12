@@ -10,13 +10,16 @@ def download_images(excel_file_path, images_dir):
     # 读取Excel文件的这2列
     df = pd.read_excel(excel_file_path).loc[:, ['标题', '图片链接']]
 
+    special_chars = ['/', '\\', ':', '*', '"', '<', '>', '|']
     # 遍历DataFrame并下载图片
     for index, row in df.iterrows():
         image_url = row['图片链接']  # 根据你的列名进行调整
         image_name = row['标题'] + '.jpg'  # 确保文件名有正确的扩展名
-        if '/' in image_name:
-            image_name = image_name.replace("/", "·")
+        for special_char in special_chars: # 替换掉特殊字符
+            if special_char in image_name:
+                image_name = image_name.replace(special_char, '_')
         file_path = os.path.join(images_dir, image_name)
+
 
         # 检查文件是否已经存在
         if os.path.exists(file_path):
