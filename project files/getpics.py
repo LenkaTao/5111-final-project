@@ -9,7 +9,7 @@ def download_images(excel_file_path, images_dir):
 
     # 读取Excel文件的这2列
     df = pd.read_excel(excel_file_path).loc[:, ['标题', '图片链接']]
-
+    #特殊字符合集，没有包括'?'
     special_chars = ['/', '\\', ':', '*', '"', '<', '>', '|']
     # 遍历DataFrame并下载图片
     for index, row in df.iterrows():
